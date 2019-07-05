@@ -4,7 +4,7 @@ import Swal from 'sweetalert2'
 import ReactTable from "react-table";
 //import './App2.css';
 
-class Tabla extends Component {
+class Tabla4 extends Component {
 
     constructor(props) {
         super(props);
@@ -53,7 +53,7 @@ class Tabla extends Component {
       }
     
       componentDidMount() {
-        const url = "https://api-dolares.herokuapp.com/api/fecha_importe_dolares";
+        const url = "https://api-dolares.herokuapp.com/api/tipo_cambio";
         fetch(url, {
           method: "GET"
         }).then(response => response.json()).then(posts => {
@@ -138,7 +138,7 @@ class Tabla extends Component {
                                     venta: props.original.venta
                                 }
 
-                                axios.post("https://tcs-tipocambio.herokuapp.com/insertarTipoCambio", data)
+                                axios.put("https://tcs-tipocambio.herokuapp.com/actualizarFecha/"+data.fecha, data)
                                     .then(data => {
                                         console.log("llego xd");
                                         Swal.fire("Good job!", "You clicked the button!", "success").then(function () {
@@ -167,11 +167,10 @@ class Tabla extends Component {
 
         return (
           <div>
-            <h3>Mantenimiento Tipo de Cambio</h3>
             
             <div className="vistaTabla">
               
-                <h4>Fechas de pagos en dolares sin tipo de cambio</h4>
+                <h4>Fechas de pagos en dolares con Tipo de cambio</h4>
                 <ReactTable
                     columns={columns}
                     data={this.state.posts}
@@ -188,4 +187,4 @@ class Tabla extends Component {
     }
 }
 
-export default Tabla;
+export default Tabla4;

@@ -7,6 +7,8 @@ import Tabla2 from './Componentes/Tabla2';
 import Tabla3 from './Componentes/Tabla3';
 import PropTypes from 'prop-types';
 import Tabla from './Componentes/Tabla';
+import Tabla4 from './Componentes/Tabla4';
+
 
 
 class App extends Component {
@@ -17,7 +19,8 @@ class App extends Component {
       <div>
           <Tabla />
           <hr></hr>
-          <Tabla3 />
+          
+          <Tabla4 />
           <div>
             
           </div>
